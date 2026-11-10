@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
-  Car, Bike, Truck, Bus, Tractor, Phone, Menu, X, ChevronLeft, ChevronRight,
+  Car, Truck, Bus, Tractor, Phone, Menu, X, ChevronLeft, ChevronRight,
   MapPin, Instagram, CreditCard, QrCode, Wallet, Send, Wrench,
 } from "lucide-react";
 import hero from "@/assets/hero-guincho.jpg";
 import logo from "@/assets/logo.png";
-import g1 from "@/assets/galeria-1.jpg";
 import g2 from "@/assets/galeria-2.jpg";
 import g3 from "@/assets/galeria-3.jpg";
 import g4 from "@/assets/galeria-4.jpg";
@@ -24,7 +23,6 @@ const LOGO: string = logo;
 // Para trocar/adicionar fotos da galeria, edite esta lista.
 const GALLERY = [
   { src: hero, alt: "Guincho plataforma transportando carro na rodovia" },
-  { src: g1, alt: "Moto presa com cintas na plataforma do guincho" },
   { src: g2, alt: "Guincho transportando van ao entardecer" },
   { src: g3, alt: "Transporte de miniescavadeira em caminhão plataforma" },
   { src: g4, alt: "Carro antigo transportado em caminhão plataforma" },
@@ -42,7 +40,6 @@ const NAV = [
 
 const SERVICES = [
   { icon: Car, title: "Guincho para carros", text: "Remoção e transporte de veículos de passeio com segurança." },
-  { icon: Bike, title: "Guincho para motos", text: "Fixação adequada para levar sua moto sem riscos." },
   { icon: Truck, title: "Guincho para utilitários", text: "Transporte de picapes e utilitários leves." },
   { icon: Bus, title: "Guincho para vans", text: "Plataforma preparada para vans e veículos maiores." },
   { icon: Tractor, title: "Transporte de máquinas", text: "Deslocamento de máquinas com cuidado e planejamento." },
@@ -59,7 +56,7 @@ const PAYMENTS = [
 
 const TITLE = "Evandro Guincho | Guincho 24 Horas em Novo Hamburgo e Região";
 const DESC =
-  "Guincho 24 horas para carros, motos, utilitários, vans, máquinas e equipamentos em Novo Hamburgo, Campo Bom, Estância Velha, Sapiranga, Vale do Sinos e Grande Porto Alegre.";
+  "Guincho 24 horas para carros, utilitários, vans, máquinas e equipamentos em Novo Hamburgo, Campo Bom, Estância Velha, Sapiranga, Vale do Sinos e Grande Porto Alegre.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -191,7 +188,7 @@ function Hero() {
             PRECISOU DE GUINCHO? <span className="text-primary">PODE CONTAR COM A GENTE!</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-background/85 sm:text-lg">
-            Atendimento para carros, motos, utilitários, vans, máquinas e equipamentos. Conte com a Evandro Guincho para transportar seu veículo com segurança e cuidado.
+            Atendimento para carros, utilitários, vans, máquinas e equipamentos. Conte com a Evandro Guincho para transportar seu veículo com segurança e cuidado.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href={waLink("Olá! Gostaria de solicitar um serviço de guincho.")} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
@@ -313,7 +310,7 @@ function Payments() {
   );
 }
 
-const VEHICLES = ["Carro", "Moto", "Utilitário", "Van", "Máquina", "Outro"];
+const VEHICLES = ["Carro", "Utilitário", "Van", "Máquina", "Outro"];
 type FormState = { nome: string; telefone: string; cidade: string; veiculo: string; descricao: string };
 const EMPTY: FormState = { nome: "", telefone: "", cidade: "", veiculo: "", descricao: "" };
 
@@ -402,7 +399,7 @@ function Footer() {
           {LOGO && <img src={LOGO} alt="" className="h-10 w-auto" />}
           <div>
             <p className="font-display text-base font-extrabold text-background">EVANDRO <span className="text-primary">GUINCHO</span></p>
-            <p className="text-xs">Guincho 24 horas e transporte de carros, motos, utilitários, vans, máquinas e equipamentos.</p>
+            <p className="text-xs">Guincho 24 horas e transporte de carros, utilitários, vans, máquinas e equipamentos.</p>
           </div>
         </div>
         <div className="text-xs leading-relaxed md:text-right">
